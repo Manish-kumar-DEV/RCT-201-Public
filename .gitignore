@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+
+# Custom
+**/1.pre-class/record/
+**/1.pre-class/practice/
+
+*.eval/
+**/lec/
+**/sol/
+notes.md
+Speech.md
+*.mp4
+# Local Netlify folder
+.netlify
