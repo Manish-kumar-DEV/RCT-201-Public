@@ -152,8 +152,8 @@ arr6.push("Hello"); // Error
   - Using `Object` disables all further type checking, and it is assumed you know the environment better than TypeScript.
 
 ```ts
-let user1: Object = { id: 1, name: "Ritesh" };
-user1 = { lastName: "Firodiya" }; // Okay
+let user1: Object = { id: 1, name: "Manish" };
+user1 = { lastName: "Kumar" }; // Okay
 ```
 
 - Record
@@ -164,7 +164,7 @@ let question: Record<string, boolean> = {
   isMarried: false, // Okay
   isEmployeed: true, // Okay
   isIndian: true, // Okay
-  name: "Ritesh", // Error
+  name: "Manish", // Error
 };
 ```
 
@@ -172,7 +172,7 @@ let question: Record<string, boolean> = {
   - Used when we know the internal structure.
 
 ```ts
-let user2: { id: number; name: string } = { id: 1, name: "Ritesh" };
+let user2: { id: number; name: string } = { id: 1, name: "Manish" };
 user2 = { id: 2, name: "John" }; // Okay
 user2 = { lastNname: "Doe" }; // Error
 ```
@@ -186,6 +186,6 @@ type User = {
   id: number;
   name: string;
 };
-let user3: User = { id: 1, name: "Ritesh" }; // Okay
-let user4: User = { id: 1, lastName: "Firodiya" }; // Error
+let user3: User = { id: 1, name: "Manish" }; // Okay
+let user4: User = { id: 1, lastName: "Kumar" }; // Error
 ```
