@@ -1,3 +1,8 @@
+### Live Lecture Notes
+
+1. React-TypeScript Cheatsheet: https://github.com/typescript-cheatsheets/react
+2. VS Code Error lens extension: https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
+
 ## [Typescript](https://www.canva.com/design/DAFRVo6KiiU/Y6terVDplneB3iad36-kJQ/view?utm_content=DAFRVo6KiiU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 - TypeScript is JavaScript with added syntax for types.
