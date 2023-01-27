@@ -1,3 +1,8 @@
+### Live Lecture Notes
+
+- For getting an idea about the `interfaces` and `types` that a particular npm package gives us, to be used in our application, we can refer to the declaration file (\*\*.d.ts).
+  Eg: Axios Declaration file: https://github.com/axios/axios/blob/v1.x/index.d.ts
+
 ### [Typescript with React](https://www.typescriptlang.org/docs/handbook/react.html)
 
 - Typescript can be used with react, using command
