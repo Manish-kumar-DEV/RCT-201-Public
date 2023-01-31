@@ -4,6 +4,7 @@ node_modules/
 # Custom
 **/1.pre-class/record/
 **/1.pre-class/practice/
+liveLec
 
 *.eval/
 **/lec/
