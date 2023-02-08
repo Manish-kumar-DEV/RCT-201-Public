@@ -26,6 +26,15 @@ const reducer = (
       return { ...oldState, loading: false, error: true };
     case types.GET_PRODUCTS_SUCCESS:
       return { ...oldState, loading: false, data: action.payload };
+    case types.UPDATE_PRODUCT_SUCCESS:
+      return {
+        ...oldState,
+        loading: false,
+        data: oldState.data.map((item) =>
+          item.id === action.payload.id ? action.payload : item
+        ),
+      };
+
     default:
       return oldState;
   }

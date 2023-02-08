@@ -1,6 +1,6 @@
 import { Product } from "../../utils/types";
 import { AppDispatch } from "../store";
-import { getProductsAPI } from "./app.api";
+import { getProductsAPI, updateProuctAPI } from "./app.api";
 import * as types from "./app.types";
 
 export interface IProductRequest {
@@ -16,7 +16,16 @@ export interface IGetProductSuccess {
   payload: Product[];
 }
 
-export type AppAction = IProductRequest | IProductError | IGetProductSuccess;
+export interface IUpdateProductSuccess {
+  type: typeof types.UPDATE_PRODUCT_SUCCESS;
+  payload: Product;
+}
+
+export type AppAction =
+  | IProductRequest
+  | IProductError
+  | IGetProductSuccess
+  | IUpdateProductSuccess;
 
 //action creators
 const productRequest = (): IProductRequest => {
@@ -31,14 +40,34 @@ const getProductSuccess = (data: Product[]): IGetProductSuccess => {
   return { type: types.GET_PRODUCTS_SUCCESS, payload: data };
 };
 
-export const getProducts = (): any => async (dispatch: AppDispatch) => {
-  dispatch(productRequest());
-  try {
-    let data = await getProductsAPI();
-    if (data) {
-      dispatch(getProductSuccess(data));
-    }
-  } catch (e) {
-    dispatch(productError());
-  }
+const updateProductSuccess = (payload: Product): IUpdateProductSuccess => {
+  return { type: types.UPDATE_PRODUCT_SUCCESS, payload };
 };
+
+export const getProducts =
+  (getProductsParam?: { params: { category: string[] } }): any =>
+  async (dispatch: AppDispatch) => {
+    dispatch(productRequest());
+    try {
+      let data = await getProductsAPI(getProductsParam);
+      if (data) {
+        dispatch(getProductSuccess(data));
+      }
+    } catch (e) {
+      dispatch(productError());
+    }
+  };
+
+export const updateProduct =
+  (id: number, payload: { title: string; price: number }): any =>
+  async (dispatch: AppDispatch) => {
+    dispatch(productRequest());
+    try {
+      let data = await updateProuctAPI(id, payload);
+      if (data) {
+        dispatch(updateProductSuccess(data));
+      }
+    } catch (e) {
+      dispatch(productError());
+    }
+  };

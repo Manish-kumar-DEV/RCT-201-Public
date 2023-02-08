@@ -11,7 +11,9 @@ import {
   } from '@chakra-ui/react';
   import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
+  import {AiOutlineEdit} from 'react-icons/ai';
 import { Product } from '../utils/types';
+import { Link } from 'react-router-dom';
   
   const data = {
     isNew: true,
@@ -75,7 +77,7 @@ import { Product } from '../utils/types';
               bg="red.200"
             />
           )}
-  
+        <Link to={`/product/${id}`}>
           <Image
           boxSize='400px'
           objectFit={'contain'}
@@ -83,7 +85,7 @@ import { Product } from '../utils/types';
             alt={`Picture of ${title}`}
             roundedTop="lg"
           />
-  
+        </Link>
           <Box p="6">
            
               {data.isNew && (
@@ -112,7 +114,11 @@ import { Product } from '../utils/types';
                 </chakra.a>
               </Tooltip>
             </Flex>
-  
+              <Box >
+                <Link to={`/product/${id}/edit`}>
+                <Icon cursor={'pointer'} as={AiOutlineEdit} h={7} w={7}/>
+                </Link>
+                </Box>
             <Flex justifyContent="space-between" alignContent="center">
               {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
               <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
