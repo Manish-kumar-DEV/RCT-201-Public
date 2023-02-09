@@ -12,7 +12,7 @@ import {
   import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
   import {AiOutlineEdit} from 'react-icons/ai';
-import { Product } from '../utils/types';
+import { Cart, Product } from '../utils/types';
 import { Link } from 'react-router-dom';
   
   const data = {
@@ -110,7 +110,7 @@ import { Link } from 'react-router-dom';
                 color={'gray.800'}
                 fontSize={'1.2em'}>
                 <chakra.a href={'#'} display={'flex'}>
-                  <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+                  <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}/>
                 </chakra.a>
               </Tooltip>
             </Flex>
